@@ -1,0 +1,59 @@
+{
+	"unihar":
+	{
+		"seq_len": 20,
+		"feature_num": 6,
+		"num_rnn": 1,
+		"num_layers": [1],
+		"rnn_io": [[6,10]],
+		"rnn_bidirection": [true],
+		"num_linear": 1,
+		"linear_io": [[20, 3]],
+		"activ": false,
+		"dropout": true,
+		"encoder": "unihar_bert"
+	},
+	"dcnn":
+	{
+		"seq_len": 20,
+		"feature_num": 6,
+		"flat_num": 1
+	},
+	"limu":
+	{
+		"seq_len": 20,
+		"feature_num": 6,
+		"num_rnn": 2,
+		"num_layers": [2, 1],
+		"rnn_io": [[6,20], [20, 10]],
+		"rnn_bidirection": [false, false],
+		"num_linear": 1,
+		"linear_io": [[10, 3]],
+		"activ": false,
+		"dropout": true,
+		"encoder": "limu_bert"
+	},
+	"tpn":
+	{
+		"seq_len": 20,
+		"feature_num": 6
+	},
+	"hdcnn":
+	{
+		"seq_len": 20,
+		"feature_num": 6,
+		"flat_num": 128
+	},
+	"fm":
+	{
+		"seq_len": 120,
+		"feature_num": 6
+	},
+	"xhar":
+	{
+		"seq_len": 120,
+		"feature_num": 102,
+		"flat_num": 128
+	}
+}
+
