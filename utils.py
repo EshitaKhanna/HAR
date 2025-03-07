@@ -267,14 +267,14 @@ def prepare_dataset(data, labels, seq_len, training_size=0.8, test_size=0.1, dom
                 else:
                     result[i] = np.concatenate(result[i])
 
-    # save the split data to .npy files
-    np.save('x_train.npy', result[0])  # training data
-    np.save('y_train.npy', result[1])  # training labels
-    np.save('x_vali.npy', result[2])   # validation data
-    np.save('y_vali.npy', result[3])   # validation labels
-    np.save('x_test.npy', result[4])   # test data
-    np.save('y_test.npy', result[5])   # test labels
-    print("[INFO] Internally splitted data saved as .npy files")
+    # # save the split data to .npy files
+    # np.save('x_train.npy', result[0])  # training data
+    # np.save('y_train.npy', result[1])  # training labels
+    # np.save('x_vali.npy', result[2])   # validation data
+    # np.save('y_vali.npy', result[3])   # validation labels
+    # np.save('x_test.npy', result[4])   # test data
+    # np.save('y_test.npy', result[5])   # test labels
+    # print("[INFO] Internally splitted data saved as .npy files")
 
     return result
 
