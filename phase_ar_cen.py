@@ -35,6 +35,9 @@ def train_ar_cen(args, method, label_index=0, label_max=4, training_size=1000,
         loss = 0.0
         inputs_source, mask_inputs_source, masked_pos_source, inputs_selection_source \
             , inputs_target, mask_inputs_target, masked_pos_target, inputs_selection_target, label = batch
+        
+        if label.dim() > 1:
+            label = label[:, 0].long() 
 
         logits, logits_domain_source = model(inputs_source, True, True)
         loss_clf = criterion_clf(logits, label)
@@ -106,6 +109,12 @@ def train_ar_cen(args, method, label_index=0, label_max=4, training_size=1000,
 
 if __name__ == "__main__":
     args = handle_argv('activity_recognition_cen', 'train_supervised.json')
+    args.source_domain = 1  # HHAR - source domain
+    args.target_domain = 4  # dummy data - target domain
+
+    args.dataset = "dummy"
+    args.dataset_version = "20_120"
+    args.label_number = 0.8
     stat_re = train_ar_cen(args, args.model, eval=args.eval, training_size=args.label_number)
 
 
